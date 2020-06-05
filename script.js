@@ -12,8 +12,10 @@ var specialChar = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", 
 function getLength() {
   // Set variable to prompt response
   var length = prompt("Choose password length by entering number between 8 and 128");
-  // Validate user input
-  if ((length >= 8) && (length <= 128)) {
+  // If user selects Cancel...
+  if (length == null) {
+    return;
+  } else if ((length >= 8) && (length <= 128)) {
     // Return variable if validated
     return length;
   }
@@ -56,20 +58,26 @@ function getCharTypes() {
 
 // Function to randomly generate password based on criteria entered
 function generatePassword() {
-  // Assign result variable
+  // Assign variable to result string
   var result = "";
-  // Define variables set to criteria function results
-  var length = getLength();
-  var superArray = getCharTypes();
-  console.log(superArray.length);
 
-  // Run for loop for number of times the length of password
-  for (var i = 0; i < length; i++) {
-    // Math.random select characters from super array
-    var randomSelect = superArray[Math.floor((Math.random() * superArray.length))];
-    result = result + randomSelect;
+  // Run length prompt and set to variable...
+  var length = getLength();
+
+  // If length is valid, run confirm character types and set to variable...
+  if (length != undefined) {
+    var superArray = getCharTypes();
   }
-  
+  console.log(superArray);
+  // If superArray isn't empty...
+  if (superArray.length > 0) {
+    // Run for loop for number of times the length of password...
+    for (var i = 0; i < length; i++) {
+      // Math.random select characters from super array
+      var randomSelect = superArray[Math.floor((Math.random() * superArray.length))];
+      result = result + randomSelect;
+    }
+  }
   return result;
 }
 
