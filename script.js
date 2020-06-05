@@ -3,13 +3,9 @@ var generateBtn = document.querySelector("#generate");
 
 //Assign variables to arrays with lower and uppercase letters, numbers, and special characters.
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-console.log(lowerCase.length);
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-console.log(upperCase.length);
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-console.log(numbers.length);
 var specialChar = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
-console.log(specialChar.length);
 
 // Functions to get criteria via prompts (length, lowercase, uppercase, numbers, special characters).
 
@@ -24,7 +20,6 @@ function getLength() {
   // Else return alert
   return alert("Length not valid, please try again");
 }
-console.log(getLength());
 
 // Function to confirm characters, validate responses, and create super array
 function getCharTypes() {
@@ -56,21 +51,25 @@ function getCharTypes() {
     superArray = superArray.concat(specialChar);
   }
 
-  console.log(superArray.length);
   return superArray;
 }
-console.log(getCharTypes());
 
 // Function to randomly generate password based on criteria entered
 function generatePassword() {
-  // Define variables set to criteria prompt functions
+  // Assign result variable
+  var result = "";
+  // Define variables set to criteria function results
   var length = getLength();
+  var superArray = getCharTypes();
+  console.log(superArray.length);
 
   // Run for loop for number of times the length of password
-
+  for (var i = 0; i < length; i++) {
     // Math.random select characters from super array
-    var result = Math.random();
-
+    var randomSelect = superArray[Math.floor((Math.random() * superArray.length))];
+    result = result + randomSelect;
+  }
+  
   return result;
 }
 
