@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 //Assign variables to arrays with lower and uppercase letters, numbers, and special characters.
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", "."];
 
 // Functions to get criteria via prompts (length, lowercase, uppercase, numbers, special characters).
@@ -13,7 +13,7 @@ function getLength() {
   // Set variable to prompt response
   var length = prompt("Choose password length by entering number between 8 and 128");
   // If user selects Cancel...
-  if (length == null) {
+  if (length === null) {
     return;
   } else if ((length >= 8) && (length <= 128)) {
     // Return variable if validated
@@ -67,15 +67,14 @@ function generatePassword() {
   // If length is valid, run confirm character types and set to variable...
   if (length != undefined) {
     var superArray = getCharTypes();
-  }
-  console.log(superArray);
-  // If superArray isn't empty...
-  if (superArray.length > 0) {
-    // Run for loop for number of times the length of password...
-    for (var i = 0; i < length; i++) {
-      // Math.random select characters from super array
-      var randomSelect = superArray[Math.floor((Math.random() * superArray.length))];
-      result = result + randomSelect;
+    // If superArray isn't empty...
+    if (superArray.length > 0) {
+      // Run for loop for number of times the length of password...
+      for (var i = 0; i < length; i++) {
+        // Math.random select characters from super array
+        var randomSelect = superArray[Math.floor((Math.random() * superArray.length))];
+        result = result + randomSelect;
+      }
     }
   }
   return result;
