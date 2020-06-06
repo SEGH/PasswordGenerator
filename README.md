@@ -15,18 +15,20 @@ This is an application with the purpose of generating random passwords based on 
 * From that array, characters are chosen using their index that is randomly selected in a for loop that runs for the length of the password. 
 * The password is then displayed as the value of the textarea of the html.
 
-Examples of responsive interface and results based on criteria selected
+### Examples of responsive interface and results based on criteria selected:
 ### 375px
 Length of 8 characters entered, no selection alert, lowercase confirmed on second pass
-<img src="images/375.jpeg"><img src="images/375-length.jpeg"><img src="images/375-select.jpeg"> 
-<img src="images/375-lower.jpeg"><img src="images/375-pw.jpeg">
+<img src="images/375.jpeg" width="300"><img src="images/375-length.jpeg" width="300"><img src="images/375-select.jpeg" width="300"> 
+<img src="images/375-lower.jpeg" width="300"><img src="images/375-pw.jpeg" width="300">
+------
 
 ### 768px
 Length of 60 entered, uppercase and special characters confirmed
-<img src="images/768.jpeg"><img src="images/768-length.jpeg">
-<img src="images/768-upper.jpeg"><img src="images/768-special.jpeg"><img src="images/768-pw.jpeg">
+<img src="images/768.jpeg" width="450"><img src="images/768-length.jpeg" width="450">
+<img src="images/768-upper.jpeg" width="300"><img src="images/768-special.jpeg" width="300"><img src="images/768-pw.jpeg" width="300">
+------
 
 ### 980px
 Length of 128 entered, lowercase and numbers confirmed
-<img src="images/980.png"><img src="images/980-length.png">
-<img src="images/980-lower.png"><img src="images/980-number.png"><img src="images/980-pw.png">
+<img src="images/980.png" width="450"><img src="images/980-length.png" width="450">
+<img src="images/980-lower.png" width="300"><img src="images/980-number.png" width="300"><img src="images/980-pw.png" width="300">
